@@ -13,10 +13,10 @@ class Mail
 		$mail->Port = 587; // Par défaut
 		$mail->CharSet = 'UTF-8';
 		// Authentification
-		$mail->Username = "xerox@lenormant.fr";
-		$mail->Password = "mont12345";
+		$mail->Username = "mail adress";
+		$mail->Password = "password";
 		// Expéditeur
-		$mail->SetFrom('xerox@lenormant.fr', 'Jean Forteroche le blog');
+		$mail->SetFrom('mail adress', 'Jean Forteroche le blog');
 		// Destinataire
 		$mail->AddAddress($user->user_mail());
 		
@@ -53,7 +53,7 @@ class Mail
 			"body" =>"<p>Félicitation <b>".$user->user_firstName()." ".$user->user_lastName()."</b>, votre compte est créé.</p>
 			<p>Je suis ravi de vous compter parmi nous et j'espère que nous pourrons partager autour des divers articles publiés.<p>
 			<p>Vous pouvez dès a présent utiliser la totalité des fonctionnalités du site. Tel que la gestion de votre compte et l'ajout de commentaire sur les articles !</p>
-			<p><a href='http://78.118.159.31/index.php'>Lien</a></p>
+			<p><a href='http://IP/index.php'>Lien</a></p>
 			<p>A tout de suite sur le site.<p>
 			<p>Jean Forteroche</p>"
 		];
@@ -71,7 +71,7 @@ class Mail
 		$mail=[
 			"title" => "Jean Forteroche le blog",
 			"body" =>"<p>Voici le lien pour modifier votre mot de passe :</p>
-			<p><a href='http://78.118.159.31/index.php?action=changePassword&controller=Controller&id=".$security."'>Lien</a></p>
+			<p><a href='http://IP/index.php?action=changePassword&controller=Controller&id=".$security."'>Lien</a></p>
 			<p>Jean Forteroche</p>"
 		];
 		return $mail;
