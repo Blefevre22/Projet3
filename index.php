@@ -21,8 +21,10 @@ try {
 	if(isset($_GET['controller']) AND isset($_GET['action'])){
 		if(method_exists($_GET['controller'], $_GET['action'])){
 			$request = new Request();
-			$manager = new $_GET['controller']();
-			$manager->$_GET['action']($request);
+			$controller = $_GET['controller'];
+			$manager = new $controller();
+			$action = $_GET['action'];
+			$manager->$action($request);
 		}else{
 			throw new Exception("Une erreur est survenue, merci de charger à nouveau la page. Si le problème persiste, fermez votre fenetre et ouvrez à nouveau le site");
 		}
